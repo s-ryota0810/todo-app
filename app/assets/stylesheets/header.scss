@@ -4,11 +4,25 @@
   min-width: 414px;
   width: 100%;
 
-  
-  &_title {
-    width: 56px;
-    height: 25px;
-    top: 17px;
-    left: 30px;
+  &_contents {
+    display: flex;
+    justify-content: space-between;
+
+    &_title {
+      width: 56px;
+      height: 25px;
+      top: 17px;
+      left: 30px;
+    }
+    
+    &_menu {
+      margin-right: 30px;
+    }
+
+
+    
+
   }
+
+
 }
