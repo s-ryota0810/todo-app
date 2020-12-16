@@ -1,0 +1,14 @@
+.header {
+  height: 58px;
+  border-bottom: solid 1px #000;
+  min-width: 414px;
+  width: 100%;
+
+  
+  &_title {
+    width: 56px;
+    height: 25px;
+    top: 17px;
+    left: 30px;
+  }
+}
