@@ -7,9 +7,15 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   </head>
 
   <body>
+    <header class= 'header'>
+      <div class="header_title">
+        <h2>Boards</h2>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
