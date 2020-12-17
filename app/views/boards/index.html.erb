@@ -1,14 +1,16 @@
 <div class="container">
   <h1>All Boards</h1>
   <% @boards.each do |board| %>
-    <div class="card">
-      <div class="card_title">
-        <p><%= board.name %></p>
+    <%= link_to board_path(board) do %>
+      <div class="card">
+        <div class="card_title">
+          <p><%= board.name %></p>
+        </div>
+        <div class="card_content">
+          <p><%= board.user.user_account %></p>    
+        </div>
       </div>
-      <div class="card_content">
-        <p><%= board.user.user_account %></p>    
-      </div>
-    </div>
+    <% end %>
   <% end %>
   <div class="card new">
     <%= link_to '+Add new board', new_board_path %>
