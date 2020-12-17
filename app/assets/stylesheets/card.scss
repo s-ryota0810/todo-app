@@ -1,8 +1,26 @@
+@import 'common';
+
 .card {
   padding: 10px 10px;
   border: solid 1px #F4F4F4;
+  background: #f4f4f4;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 20px 10px;
   
   &_title {
     font-weight: bold;
   }
+  
+
+}
+
+.new {
+  padding: 40px 10px;
+  text-align: center;
+  background: #FFF;
+  border: dotted 1px #000;
+  position: fixed;
+  bottom: 20px;
+  width: 80%;
 }
