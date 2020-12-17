@@ -1,6 +1,8 @@
 @import 'authenticate';
 @import 'header';
 @import 'common';
+@import 'card';
+
 
 
 
@@ -8,4 +10,8 @@ html {
   font-family: Avenir;
   min-width: 414px;
   position: relative;
+}
+
+a {
+  text-decoration: none;
 }
