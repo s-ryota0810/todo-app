@@ -9,7 +9,7 @@
     <% if user_signed_in? && current_user.has_written?(@board) %>
       <div class="board_select">
         <p><%= link_to 'edit', edit_board_path(@board.id)%></p>
-        <p><%= link_to 'delete', board_path, local: true, data: { method: 'delete'} %></p>
+        <p><%= link_to 'delete', board_path, local: true, data: { method: 'delete', confirm: '本当に削除しますか？'} %></p>
       </div>
     <% end %>
   </div>
