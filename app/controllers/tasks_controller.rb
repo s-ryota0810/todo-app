@@ -16,6 +16,10 @@ class TasksController < ApplicationController
     end
   end
   
+  def show
+    binding_pry
+  end
+  
   
   private
   
