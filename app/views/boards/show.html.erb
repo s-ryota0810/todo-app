@@ -16,6 +16,7 @@
   <div class="task">
     <% @tasks.each do |task| %>
       <div class="task_field">
+        <%= image_tag task.eyecatch_image %>
         <h2><%= task.title %></h2>
         <p><%= task.content %></p>
       </div>
