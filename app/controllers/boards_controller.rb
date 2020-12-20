@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]
   
   
   def index
@@ -21,6 +22,20 @@ class BoardsController < ApplicationController
   
   def show
     @board = Board.find(params[:id])
+  end
+  
+  def edit
+    @board = current_user.boards.find(params[:id])
+  end
+  
+  def update
+    @board = current_user.boards.find(params[:id])
+    if @board.update(board_params)
+      redirect_to board_path(@board), notice: '更新しました'
+    else
+      flash.now[:error] = '更新に失敗しました'
+      render :edit
+    end
   end
   
   
