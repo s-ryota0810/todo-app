@@ -1,9 +1,16 @@
-input,select {
+input,select{
   width: 362px;
   height: 30px;
   background: #F4F4F4;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.textarea {
+  width: 362px;
+  background: #F4F4F4;
+  height: 75px;
+  border-radius: 10px;
 }
 
 .btn-primary {

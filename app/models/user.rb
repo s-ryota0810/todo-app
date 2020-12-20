@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def user_account
     self.email.split('@').first
   end
+  
+  def has_written?(board)
+    self.boards.exists?(id: board.id)
+  end
 end
