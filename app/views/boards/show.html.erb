@@ -14,6 +14,14 @@
     <% end %>
   </div>
   <div class="task">
-    <p><%= link_to 'Add tasks', new_board_tasks_path(@board) %></p>
+    <% @tasks.each do |task| %>
+      <div class="task_field">
+        <h2><%= task.title %></h2>
+        <p><%= task.content %></p>
+      </div>
+    <% end %>
+    <div class="task_add">
+      <p><%= link_to 'Add tasks', new_board_tasks_path(@board), class: 'btn-secondary' %></p>
+    </div>
   </div>
 </div>
