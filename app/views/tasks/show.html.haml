@@ -1,0 +1,15 @@
+.container
+  .task
+    %p
+      = @task.board.name
+    .task_header
+      %h1= @task.title
+      .dropdown
+        = image_tag 'Combined Shape.png', class:'dropbtn'
+        .dropdown_content
+          = link_to 'edit', edit_board_task_path(@task.board_id,@task.id)
+          = link_to 'delete', board_task_path, data: { method: 'delete', confirm: '本当に削除してもよろしいですか'}
+    .task_image
+      = image_tag @task.eyecatch_image
+    .task_content
+      %p= @task.content
