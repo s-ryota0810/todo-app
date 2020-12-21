@@ -15,11 +15,13 @@
   </div>
   <div class="task">
     <% @tasks.each do |task| %>
-      <div class="task_field">
-        <%= image_tag task.eyecatch_image %>
-        <h2><%= task.title %></h2>
-        <p><%= task.content %></p>
-      </div>
+      <%= link_to board_task_path(@board,task) do %>
+        <div class="task_field">
+          <%= image_tag task.eyecatch_image %>
+          <h2><%= task.title %></h2>
+          <p><%= task.content %></p>
+        </div>
+      <% end %>
     <% end %>
     <div class="task_add">
       <p><%= link_to 'Add tasks', new_board_task_path(@board), class: 'btn-secondary' %></p>

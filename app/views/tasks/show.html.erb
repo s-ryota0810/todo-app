@@ -1,1 +1,20 @@
-Show
+<div class="container">
+  <div class="task">
+    <div class="task_header">
+      <h1><%= @task.title %></h1>
+      <div class="dropdown">
+        <%= image_tag 'Combined Shape.png', class:'dropbtn'%>
+          <div class="dropdown_content">
+            <%= link_to 'edit', '#' %>
+            <%= link_to 'delete', '#' %>
+          </div>
+      </div>
+    </div>
+    <div class="task_image">
+      <%= image_tag @task.eyecatch_image %>
+    </div>
+    <div class="task_content">
+      <p><%= @task.content %></p>
+    </div>
+  </div>
+</div>
