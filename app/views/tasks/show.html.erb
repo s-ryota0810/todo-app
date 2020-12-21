@@ -7,7 +7,7 @@
         <%= image_tag 'Combined Shape.png', class:'dropbtn'%>
           <div class="dropdown_content">
             <%= link_to 'edit', edit_board_task_path(@task.board_id,@task.id) %>
-            <%= link_to 'delete', '#' %>
+            <%= link_to 'delete', board_task_path, data: { method: 'delete', confirm: '本当に削除してもよろしいですか'} %>
           </div>
       </div>
     </div>

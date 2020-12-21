@@ -37,6 +37,13 @@ class TasksController < ApplicationController
     end
   end
   
+  def destroy
+    board = Board.find(params[:board_id])
+    task = board.tasks.find(params[:id])
+    task.destroy!
+    redirect_to board_path(board), notice: 'タスクを削除しました'
+  end
+  
   
   private
   
