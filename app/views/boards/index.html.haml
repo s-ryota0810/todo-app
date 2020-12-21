@@ -1,0 +1,11 @@
+.container
+  %h1 All Boards
+  - @boards.each do |board|
+    = link_to board_path(board) do
+      .card
+        .card_title
+          %p= board.name
+        .card_content
+          %p= board.user.user_account
+  .card.new
+    = link_to '+Add new board', new_board_path

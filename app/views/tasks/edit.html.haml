@@ -1,0 +1,24 @@
+.container
+  - @task.errors.full_messages.each do |message|
+    %ul
+      %li= message
+  %h1 Edit Task
+  = form_with(model: @task, url: board_task_path(@task.board_id,@task.id), local: true, method: 'patch') do |f|
+    %div
+      = f.label :eyecatch, 'Eyecatch'
+    %div
+      = f.file_field :eyecatch
+    %div
+      = f.label :title, 'Title'
+    %div
+      = f.text_field :title
+    %div
+      = f.label :content, 'Content'
+    %div
+      = f.text_area :content, class: 'textarea'
+    %div
+      = f.label :limit, 'Limit'
+    %div
+      = f.date_field :limit
+    %div
+      = f.submit 'Submit', class: 'btn-secondary'

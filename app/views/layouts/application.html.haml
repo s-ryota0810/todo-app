@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title TodoApp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+  %body
+    %header.header
+      .header_contents
+        .header_contents_title
+          = link_to root_path do
+            %h2 Boards
+        .header_contents_menu
+          - if user_signed_in?
+            %ul
+              %li= link_to 'Log out', destroy_user_session_path, data: { method: 'delete'}
+          - else
+            %ul
+              %li= link_to 'Sign up', new_user_registration_path
+              %li= link_to 'Sign in', new_user_session_path
+    - if flash.present?
+      - flash.each do | key, value |
+        %p{:class => "\#{key}"}= value
+    = yield
