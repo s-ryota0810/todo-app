@@ -14,8 +14,13 @@ input,select{
 }
 
 .btn-primary {
-  width: 362px;
+  width: 100%;
   top: 889px;
   background: #F8BD1C;
   position: absolute;
+}
+
+.btn-secondary {
+  width: 362px;
+  background: #A4AD2C;
 }

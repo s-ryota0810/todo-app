@@ -1,0 +1,37 @@
+<div class="container">
+  <% @task.errors.full_messages.each do |message| %>
+    <ul>
+      <li><%= message %></li>
+    </ul>
+  <% end %>
+  <h1>Edit Task</h1>
+  <%= form_with(model: @task, url: board_task_path(@task.board_id,@task.id), local: true, method: 'patch') do |f| %>
+    <div>
+      <%= f.label :eyecatch, 'Eyecatch' %>
+    </div>
+    <div>
+      <%= f.file_field :eyecatch %>
+    </div>
+    <div>
+      <%= f.label :title, 'Title' %>
+    </div>
+    <div>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :content, 'Content' %>
+    </div>
+    <div>
+      <%= f.text_area :content, class: 'textarea' %>
+    </div>
+    <div>
+      <%= f.label :limit, 'Limit' %>
+    </div>
+    <div>
+      <%= f.date_field :limit %>
+    </div>
+    <div>
+      <%= f.submit 'Submit', class: 'btn-secondary' %>
+    </div>
+  <% end %>
+</div>
