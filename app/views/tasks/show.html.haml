@@ -13,3 +13,11 @@
       = image_tag @task.eyecatch_image
     .task_content
       %p= @task.content
+  .comment
+    - @comments.each do |comment|
+      %p= comment.content
+    .comment_create    
+      = link_to 'Add Comment', new_board_task_comment_path(@task.board_id,@task.id)
+    
+    
+    
